@@ -1,0 +1,14 @@
+<p>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span routerLink="/home">{{title}}</span>
+      <span class="example-spacer"></span>
+      <button (click)="logout()" routerLink="/login" title="Logout" mat-icon-button class="example-icon bc" aria-label="Example icon-button with share icon">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout"></mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon bc" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>

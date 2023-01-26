@@ -1,0 +1,16 @@
+[
+  {
+    "userID" : 0,
+    "stato": "Oggi mi sento bene"
+  },
+
+  {
+    "userID" : 1,
+    "stato" : "Domani andrò a mare"
+  },
+
+  {
+    "userID" : 2,
+    "stato" : "Devo andare a fare la spesa"
+  }
+]

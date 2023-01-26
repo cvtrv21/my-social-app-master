@@ -1,0 +1,30 @@
+[
+  {
+    "sendID": 0,
+    "receiveID": 2,
+    "content": [
+      "Ciao, oggi ci vediamo?"
+    ]
+  },
+  {
+    "sendID": 0,
+    "receiveID": 1,
+    "content": [
+      "Caffè alla solita ora?"
+    ]
+  },
+  {
+    "sendID": 2,
+    "receiveID": 0,
+    "content": [
+      "No, purtroppo ho impegni"
+    ]
+  },
+  {
+    "sendID": 1,
+    "receiveID": 2,
+    "content": [
+      "Aspeto una tua chiamata"
+    ]
+  }
+]

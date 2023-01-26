@@ -1,0 +1,34 @@
+<div class="user-text">
+  User logged: {{user.getUserByID(user.getID()).name}}
+</div>
+
+<div>
+  <app-friends-list></app-friends-list>
+</div>
+
+<div class="container">
+  <div class="form-group input-post">
+    <div class="form-control">
+      <input class="form-control" type="text" placeholder="A cosa stai pensando.." (change)="onInput($event)"/>
+    </div>
+    <button class="btn btn-primary center" (click)="onClick()">Pubblica</button>
+
+    <mat-card class="example-card" *ngFor="let post of arrPost ">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title>{{user.getUserByID(post.userID).name}}</mat-card-title>
+          <mat-card-subtitle>{{user.getUserByID(post.userID).city}}</mat-card-subtitle>
+          <img mat-card-sm-image src="{{user.getUserByID(post.userID).profileIMG}}" routerLink="/user/{{post.userID}}" >
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>
+        {{post.stato}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div>
+  <app-chat-bar></app-chat-bar>
+</div>
+

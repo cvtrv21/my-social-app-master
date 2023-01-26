@@ -1,0 +1,33 @@
+
+<div class="center">
+  <h1 class="title">Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="form-group">
+      <label>Email:</label>
+      <div>
+        <input class="form-control" type="email" name="email" id="email" formControlName="email" placeholder="Inserire email">
+        <div class="form-text text-danger" *ngIf="checkEmail.errors?.['required'] && checkEmail.touched">
+          Compilare il campo
+        </div>
+        <div class="form-text text-danger" *ngIf="checkEmail.errors?.['email']">
+          Email non valida
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Password:</label>
+      <div>
+        <input class="form-control" type="password" name="password" id="password" formControlName="password" placeholder="Inserire password">
+        <div class="form-text text-danger" *ngIf="checkPassword.errors?.['required'] && checkPassword.touched">
+          Compilare il campo
+        </div>
+      </div>
+    </div>
+
+    <div class="col text-center" >
+      <button class="btn btn-primary btn-space" type="submit" [disabled]="loginForm.invalid">Accedi</button>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="center">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>
+          <h1>Info Utente</h1>
+        </mat-card-title>
+        <img mat-card-lg-image src="{{ user.getUserByID(userID).profileIMG }}" />
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <mat-card-title class="myrow">
+          {{ user.getUserByID(userID).name }}
+        </mat-card-title>
+      </div>
+      <div>
+        <mat-card-title class="myrow">
+          Vive a: {{ user.getUserByID(userID).city }}
+        </mat-card-title>
+      </div>
+      <div>
+        <mat-card-title class="myrow">
+          Email: {{ user.getUserByID(userID).email }}
+        </mat-card-title>
+        <mat-card-title class="myrow">
+          Lista amici:
+          <mat-card-subtitle *ngFor="let friendID of friendsID">
+            {{getFriends(friendID).name}}
+          </mat-card-subtitle>
+        </mat-card-title>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

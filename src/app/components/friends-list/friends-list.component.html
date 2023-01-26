@@ -1,0 +1,41 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 text-center sidebar">
+  <div>
+    <h5><strong>Lista amici</strong></h5>
+  </div>
+
+  <div class="body">
+    <table class="table text-center" *ngFor="let friendID of friendsID">
+      <tr rowspan="2" class="mb-auto flex-row">
+        <td>
+          <img
+            src="{{ getFriends(friendID).profileIMG }}"
+            title="Vai al profilo"
+            routerLink="/user/{{ friendID }}"
+          />
+        </td>
+        <td>
+          {{ getFriends(friendID).name }}
+        </td>
+        <td>
+          <button mat-raised-button color="primary" class="my-btn-chat" (click)="openChat( getFriends(friendID).id )">
+            Chat {{ getFriends(friendID).profileIMG }}
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <div class="input-group rounded">
+      <input
+        type="search"
+        class="form-control rounded"
+        placeholder="Cerca amici.."
+        id="search-bar"
+      />
+      <button class="input-group-text border-0" id="search-button">
+        Cerca
+      </button>
+    </div>
+  </div>
+</div>
