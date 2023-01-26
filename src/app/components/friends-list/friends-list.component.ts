@@ -27,9 +27,11 @@ export class FriendsListComponent implements OnInit {
     this.searchUser = (<HTMLInputElement>event.target).value;
   }
 
-  public openChat(id : number) {
-    //this._chats.openNewChat(friendID);
-    console.log(this._chats.openNewChat(id));
+  public openChat(friendID : number) {
+    //this._chats.openChat(this.getFriends(friendID).id);
+    //console.log(this._chats.openNewChat(id));
+    console.log("Start chat with " + this.getFriends(friendID).name);
+
 
   }
 }

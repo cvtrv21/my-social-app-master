@@ -10,9 +10,10 @@ import { UserService } from './user.service';
 export class ChatService {
 
   public chat : IChat[] = chatsList;
-  public chatBar !: IChatWindow;
+  public chatBar : IChatWindow[] = [];
 
   public userID !: number;
+  public friendsID : number[] = [];
 
   constructor(private _users : UserService) {
     this.userID = this._users.getID();
@@ -33,7 +34,8 @@ export class ChatService {
    public addMsg(body : string, friendID : number ) {}
 
    public reduceAll() {
-    this.chatBar.isOpen = false;
+    this.chatBar[this.userID].isOpen = false;
+    //this.chatBar.isOpen = false;
    }
 
    public closeChat(chat : IChatWindow) {}
@@ -47,17 +49,30 @@ export class ChatService {
     chat.isOpen =! !chat.isOpen
    }
 
-   public openNewChat(friendID : number) {
+   /*
+   public openNewChat(friendID : number){
     let isFind = false;
-    if(this.chatBar.friendID === friendID) {
+    if(this.chatBar.friendID == friendID){
       this.chatBar.isOpen = !this.chatBar.isOpen;
-      isFind = true;
     }
-    if(!isFind) {
+    if(!isFind){
       this.chatBar = {
         friendID : friendID,
         isOpen : true
       }
     }
    }
+   */
+   public openChat(friendID : number) {
+    let isFind = false;
+    if(this.chatBar[friendID].friendID === friendID) {
+      this.chatBar[friendID].isOpen = !this.chatBar[friendID].isOpen
+      isFind = true;
+    }
+    if(!isFind){
+      this.chatBar[friendID].friendID = friendID;
+      this.chatBar[friendID].isOpen = true;
+    }
+   }
+
 }

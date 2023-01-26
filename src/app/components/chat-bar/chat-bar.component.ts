@@ -15,12 +15,8 @@ export class ChatBarComponent implements OnInit{
   public chatBar : IChatWindow[] = [];
 
   ngOnInit(): void {
-    this.chatBar.push(this._chat.getChatBar());
-    console.log(this.chatBar.push(this._chat.getChatBar()));
-  }
-
-  public getprofileIMG(id : number) {
-    return this._user.getUserByID(id).profileIMG;
+    this.chatBar = this._chat.getChatBar();
+    console.log(this.chatBar);
   }
 
   public toggleChat(chat : IChatWindow) {
