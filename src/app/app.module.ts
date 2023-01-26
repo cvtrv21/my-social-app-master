@@ -14,8 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { UserComponent } from './components/user/user.component';
 import { FriendsListComponent } from './components/friends-list/friends-list.component';
-import { ChatBarComponent } from './components/chat-bar/chat-bar.component';
-import { ChatWindowComponent } from './components/chat-bar/chat-window/chat-window.component';
+import { ChatWindowComponent } from './components/chat-window/chat-window.component';
 
 
 
@@ -28,7 +27,6 @@ import { ChatWindowComponent } from './components/chat-bar/chat-window/chat-wind
     HomeComponent,
     UserComponent,
     FriendsListComponent,
-    ChatBarComponent,
     ChatWindowComponent,
   ],
   imports: [

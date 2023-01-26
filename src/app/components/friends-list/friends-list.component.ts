@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IChat } from 'src/app/interfaces/chat';
 import { ChatService } from 'src/app/services/chat.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -13,6 +14,7 @@ export class FriendsListComponent implements OnInit {
   public userID!: number;
   public friendsID: number[] = [];
   public searchUser : string = '';
+  public arr : IChat[] = [];
 
   ngOnInit(): void {
     this.userID = this._user.getID();
